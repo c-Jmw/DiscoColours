@@ -10,5 +10,5 @@ import Foundation
 
 struct Colour {
     let title:String
-    let colourCodeValue:String
+    let colourValues:String
 }

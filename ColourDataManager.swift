@@ -22,9 +22,10 @@ class ColourDataManager {
     
     // set data according to `Colours` struct
     func loadColours() {
+        let codeValueTitle = "Colour Code"
         colours = [
-            Colour(title: "Hex Value", colourCodeValue: "#FF0000"),
-            Colour(title: "RGB Value", colourCodeValue: "rgb(255, 0, 0)")
+            Colour(title: codeValueTitle, colourValues: "#00FF00 rgb(0, 255, 0)"),
+            Colour(title: codeValueTitle, colourValues: "#FF0000 rgb(255, 0, 0)")
         ]
     }
     

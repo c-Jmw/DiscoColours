@@ -36,7 +36,9 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
-        tableViewCell.detailTextLabel?.text = colour.colourCodeValue
+        tableViewCell.detailTextLabel?.text = colour.colourValues
+        tableViewCell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        
         
         // send out fully populated table cell
         return tableViewCell
