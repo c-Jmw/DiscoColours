@@ -12,20 +12,24 @@
 	<dict>
 		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
 		<string>https://github.com/c-Jmw/DiscoColours.git</string>
+		<key>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</key>
+		<string>https://github.com/c-Jmw/DiscoColours.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DiscoColoursV2/DiscoColoursV2.xcodeproj</string>
+	<string>DiscoColoursV2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
 		<string>../../..</string>
+		<key>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/c-Jmw/DiscoColours.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7A1C828E9849B2A57221E95EDDF83C29D9606110</string>
+	<string>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>7A1C828E9849B2A57221E95EDDF83C29D9606110</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Practice</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DiscoColoursV2</string>
 		</dict>
 	</array>
 </dict>
