@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>193C24F8-57C9-4B51-A7AB-A6803838D093</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DiscoColoursV2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
+		<string>https://github.com/c-Jmw/DiscoColours.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DiscoColoursV2/DiscoColoursV2.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/c-Jmw/DiscoColours.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7A1C828E9849B2A57221E95EDDF83C29D9606110</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A1C828E9849B2A57221E95EDDF83C29D9606110</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Practice</string>
+		</dict>
+	</array>
+</dict>
+</plist>
