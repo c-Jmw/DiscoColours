@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct Colour {
     let title:String
     let colourValues:String
+    // This doesn't seem to work initialising without values
+    var cellBackgroundColour = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
 }

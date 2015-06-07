@@ -25,6 +25,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         return colours.count
     }
     
+    
     // create table cell and populate with data
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -37,10 +38,12 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
         tableViewCell.detailTextLabel?.text = colour.colourValues
-        tableViewCell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        tableViewCell.backgroundColor = colour.cellBackgroundColour
+        //tableViewCell.backgroundColor = convertRGBtoDecimal(randomRGBColourValue, green: randomRGBColourValue, blue: randomRGBColourValue)
         
         
         // send out fully populated table cell
         return tableViewCell
     }
+
 }
