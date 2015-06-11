@@ -14,9 +14,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = self
         
-        // access `findAll` function and stor in varible for use later on
+        refreshColours()
+    }
+    
+    func refreshColours() {
         colours = ColourDataManager.sharedManager.findAll()
     }
     
@@ -37,7 +39,9 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
+        tableViewCell.textLabel?.textColor = colour.cellTextColour
         tableViewCell.detailTextLabel?.text = colour.colourValues
+        tableViewCell.detailTextLabel?.textColor = colour.cellTextColour
         tableViewCell.backgroundColor = colour.cellBackgroundColour
         //tableViewCell.backgroundColor = convertRGBtoDecimal(randomRGBColourValue, green: randomRGBColourValue, blue: randomRGBColourValue)
         
@@ -46,4 +50,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         return tableViewCell
     }
 
+    @IBAction func onRefreshTapped(sender: AnyObject) {
+        refreshColours()
+        self.tableView.reloadData()
+    }
 }
