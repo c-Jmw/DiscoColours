@@ -11,7 +11,7 @@ import UIKit
 
 struct Colour {
     var title:String!
-    var colourValues:String!
+    var colourValue:String!
     // This doesn't seem to work initialising without values
     var cellBackgroundColour:UIColor!
     var cellTextColour:UIColor!
@@ -19,7 +19,7 @@ struct Colour {
     init() {
         title = "Colour Value"
         cellBackgroundColour = createRandomColour()
-        colourValues = "rgb(\(stringValues()))"
+        colourValue = "rgb(\(stringValues()))"
         cellTextColour = getTextColour()
     }
     
@@ -38,47 +38,22 @@ struct Colour {
     
     // create subtle colours for text
     func getTextColour() -> UIColor {
+        
+        // create variables for `getRed()` value returns
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
         var a:CGFloat = 0
         cellBackgroundColour.getRed(&r, green: &g, blue: &b, alpha: &a)
         
-        if (r > 0.5 && r > g && r > b) {
-            r -= 0.2
+        // set text colour to be lighter or darker than background
+        if ((r+g+b) >= 1.2 || r > 0.78 || g > 0.78 || b > 0.78 ) {
+            r = 0.0; g = 0.0; b = 0.0
         } else {
-            r += 0.2
-        }
-        if (g > 0.5 && g > r && g > b) {
-            g -= 0.2
-        } else {
-            g += 0.2
-        }
-        if (b > 0.5 && b > r && b > g) {
-            b -= 0.2
-        } else {
-            b += 0.2
+            r = 1.0; g = 1.0; b = 1.0
         }
         
-//        if (r > 0.5) {
-//            r -= 0.3
-//        }
-//        else {
-//            r += 0.3
-//        }
-//        if (g > 0.5) {
-//            g -= 0.3
-//        }
-//        else {
-//            g += 0.3
-//        }
-//        if (b > 0.5) {
-//            b -= 0.3
-//        }
-//        else {
-//            b += 0.3
-//        }
-        return UIColor(red:r, green: g, blue:b, alpha:1.0)
+        return UIColor(red:r, green: g, blue:b, alpha:0.3)
     }
     
     func stringValues() -> String {
@@ -87,9 +62,9 @@ struct Colour {
         var b:CGFloat = 0
         var a:CGFloat = 0
         cellBackgroundColour.getRed(&r, green: &g, blue: &b, alpha: &a)
-        var redInt = (r*255)
-        let greenInt = (g*255)
-        let blueInt = (b*255)
-        return "\(ceil(redInt)), \(ceil(greenInt)), \(ceil(blueInt))"
+        var redInt = ceil(r*255)
+        let greenInt = ceil(g*255)
+        let blueInt = ceil(b*255)
+        return "\(Int(redInt)), \(Int(greenInt)), \(Int(blueInt))"
     }
 }

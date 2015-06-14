@@ -33,6 +33,7 @@ class ColourDataManager {
         ]
     }
     
+    // Collect all instances of `Colour`
     func findAll() -> [Colour] {
         loadColours()
         return colours

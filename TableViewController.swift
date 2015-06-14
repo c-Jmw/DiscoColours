@@ -18,6 +18,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         refreshColours()
     }
     
+    
+    
     func refreshColours() {
         colours = ColourDataManager.sharedManager.findAll()
     }
@@ -40,7 +42,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
         tableViewCell.textLabel?.textColor = colour.cellTextColour
-        tableViewCell.detailTextLabel?.text = colour.colourValues
+        tableViewCell.detailTextLabel?.text = colour.colourValue
         tableViewCell.detailTextLabel?.textColor = colour.cellTextColour
         tableViewCell.backgroundColor = colour.cellBackgroundColour
         //tableViewCell.backgroundColor = convertRGBtoDecimal(randomRGBColourValue, green: randomRGBColourValue, blue: randomRGBColourValue)
