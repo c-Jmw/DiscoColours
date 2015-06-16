@@ -38,6 +38,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JFh-VV-et3">
+                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="HQJ-JI-Koc">
+                            <connections>
+                                <action selector="undoButton:" destination="tph-hd-B51" id="fXO-7q-zcl"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gDn-2h-gVn">
                             <connections>
                                 <action selector="onRefreshTapped:" destination="tph-hd-B51" id="uJ2-ui-f7T"/>

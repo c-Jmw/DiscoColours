@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Colour {
+class Colour {
     var title:String!
     var colourValue:String!
     // This doesn't seem to work initialising without values

@@ -7,21 +7,29 @@
 //
 
 import UIKit
+import Foundation
 
 class TableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var colours:[Colour] = []
+    private var undoManagerList:NSUndoManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshColours()
+        undoManagerList = NSUndoManager()
     }
     
     
     
     func refreshColours() {
         colours = ColourDataManager.sharedManager.findAll()
+    }
+    
+    func rewindColours(coloursin:[Colour]) {
+        colours = coloursin
+        self.tableView.reloadData()
     }
     
     // get number of rows according to loadColours items
@@ -53,7 +61,18 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     }
 
     @IBAction func onRefreshTapped(sender: AnyObject) {
+        
+        if let oldColoursList = undoManagerList {
+            oldColoursList.registerUndoWithTarget(self, selector:Selector("rewindColours:"), object: colours)
+        }
+        
         refreshColours()
         self.tableView.reloadData()
+        
     }
+    
+    @IBAction func undoButton(sender: AnyObject) {
+        self.undoManagerList!.undo()
+    }
+    
 }
