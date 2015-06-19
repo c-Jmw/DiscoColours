@@ -13,12 +13,15 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     private var colours:[Colour] = []
     private var undoManagerList:NSUndoManager?
+    private var userCellSelection:NSMutableData?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshColours()
         undoManagerList = NSUndoManager()
+        userCellSelection = NSMutableData()
     }
     
     
@@ -46,6 +49,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         // ?
         var tableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "")
+        tableViewCell.selectionStyle = .None
+        tableViewCell.accessoryType = .Checkmark
         
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
