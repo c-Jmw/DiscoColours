@@ -11,6 +11,7 @@ import UIKit
 
 class ColourDataManager {
     private var colours:[Colour]
+    var favColours:[Colour]
     
     // ?
     static let sharedManager:ColourDataManager = ColourDataManager()
@@ -18,6 +19,7 @@ class ColourDataManager {
     // initialise colours array
     init() {
         colours = []
+        favColours = [] // TODO: Load from NSUserDefaults
     }
     
     // set data according to `Colours` struct
@@ -37,6 +39,23 @@ class ColourDataManager {
     func findAll() -> [Colour] {
         loadColours()
         return colours
+    }
+    
+    func addFavouriteColour(selectedColour:Colour) {
+        // Add this to favColours
+        favColours.append(selectedColour)
+        
+        // Save to NSUserDefaults
+    }
+    
+    func removeFavouriteColour(colour:Colour) {
+        // Find a colour instance in favColours that is the exact ame isntance as the color passed in
+        // Remove it from array
+        // Save
+    }
+    
+    private func saveFavColours() {
+        // Save favColours to NSUserDefaults
     }
 
 }

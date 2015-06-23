@@ -16,10 +16,17 @@ class Colour {
     var cellBackgroundColour:UIColor!
     var cellTextColour:UIColor!
     
-    init() {
+    init(cellBackgroundColour aCellBackgroundColour:UIColor?=nil) {
         title = "Colour Value"
-        cellBackgroundColour = createRandomColour()
-        colourValue = "rgb(\(stringValues()))"
+        
+        if aCellBackgroundColour != nil {
+            cellBackgroundColour = aCellBackgroundColour
+        }
+        else {
+            cellBackgroundColour = createRandomColour()
+        }
+        
+        colourValue = "rgb(\(colourValueAsString()))"
         cellTextColour = getTextColour()
     }
     
@@ -56,7 +63,7 @@ class Colour {
         return UIColor(red:r, green: g, blue:b, alpha:0.3)
     }
     
-    func stringValues() -> String {
+    func colourValueAsString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0

@@ -53,7 +53,6 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // ?
         var tableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "")
         tableViewCell.selectionStyle = .None
-//        tableViewCell.accessoryType = .Checkmark
       
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
@@ -61,7 +60,6 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         tableViewCell.detailTextLabel?.text = colour.colourValue
         tableViewCell.detailTextLabel?.textColor = colour.cellTextColour
         tableViewCell.backgroundColor = colour.cellBackgroundColour
-        //tableViewCell.backgroundColor = convertRGBtoDecimal(randomRGBColourValue, green: randomRGBColourValue, blue: randomRGBColourValue)
         
         
         // send out fully populated table cell
@@ -79,6 +77,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     default:
      cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
+    //if (cell!.accessoryType = .Checkmark) {
+    NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color]
+    [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:@"\(cell.backgroundColour)"]
+    //}
+    
   }
 
     @IBAction func onRefreshTapped(sender: AnyObject) {
