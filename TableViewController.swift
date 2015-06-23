@@ -24,8 +24,6 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         userCellSelection = UITableViewRowAction()
     }
     
-    
-    
     func refreshColours() {
         colours = ColourDataManager.sharedManager.findAll()
     }
@@ -55,8 +53,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // ?
         var tableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "")
         tableViewCell.selectionStyle = .None
-        tableViewCell.accessoryType = .Checkmark
-        
+//        tableViewCell.accessoryType = .Checkmark
+      
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
         tableViewCell.textLabel?.textColor = colour.cellTextColour
@@ -69,6 +67,19 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // send out fully populated table cell
         return tableViewCell
     }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath)
+    
+    // Toggle between checked/unchecked state
+    // TODO If checked, record favourited colour
+    switch (cell!.accessoryType) {
+    case .Checkmark:
+     cell?.accessoryType = UITableViewCellAccessoryType.None
+    default:
+     cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+    }
+  }
 
     @IBAction func onRefreshTapped(sender: AnyObject) {
         

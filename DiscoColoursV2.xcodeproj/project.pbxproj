@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3102C98A1B3956E50042A034 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102C9891B3956E50042A034 /* Colour.swift */; };
 		C033BD241B205F1500F0BF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD231B205F1500F0BF53 /* AppDelegate.swift */; };
 		C033BD261B205F1500F0BF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD251B205F1500F0BF53 /* ViewController.swift */; };
 		C033BD291B205F1500F0BF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C033BD271B205F1500F0BF53 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		C033BD2E1B205F1500F0BF53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C033BD2C1B205F1500F0BF53 /* LaunchScreen.xib */; };
 		C033BD3A1B205F1500F0BF53 /* DiscoColoursV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */; };
 		C033BD451B20686E00F0BF53 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD441B20686E00F0BF53 /* TableViewController.swift */; };
-		C033BD4B1B2085C000F0BF53 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD4A1B2085C000F0BF53 /* Colour.swift */; };
 		C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3102C9891B3956E50042A034 /* Colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 		C033BD1E1B205F1500F0BF53 /* DiscoColoursV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscoColoursV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C033BD221B205F1500F0BF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C033BD231B205F1500F0BF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		C033BD381B205F1500F0BF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoColoursV2Tests.swift; sourceTree = "<group>"; };
 		C033BD441B20686E00F0BF53 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		C033BD4A1B2085C000F0BF53 /* Colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colour.swift; path = /Users/caseymacrae/Documents/GAprojects/Practice/DiscoColoursV2/Colour.swift; sourceTree = "<absolute>"; };
 		C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 		C033BD4F1B208F7100F0BF53 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C033BD4A1B2085C000F0BF53 /* Colour.swift */,
+				3102C9891B3956E50042A034 /* Colour.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -245,9 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C033BD4B1B2085C000F0BF53 /* Colour.swift in Sources */,
 				C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */,
 				C033BD261B205F1500F0BF53 /* ViewController.swift in Sources */,
+				3102C98A1B3956E50042A034 /* Colour.swift in Sources */,
 				C033BD451B20686E00F0BF53 /* TableViewController.swift in Sources */,
 				C033BD241B205F1500F0BF53 /* AppDelegate.swift in Sources */,
 			);
