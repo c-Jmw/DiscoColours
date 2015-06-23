@@ -13,7 +13,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     private var colours:[Colour] = []
     private var undoManagerList:NSUndoManager?
-    private var userCellSelection:NSMutableData?
+    private var userCellSelection:UITableViewRowAction?
     
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         refreshColours()
         undoManagerList = NSUndoManager()
-        userCellSelection = NSMutableData()
+        userCellSelection = UITableViewRowAction()
     }
     
     
@@ -33,6 +33,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     func rewindColours(coloursin:[Colour]) {
         colours = coloursin
         self.tableView.reloadData()
+    }
+    
+    // table cell swipe action
+    override func tableView(tableView:UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
+        
     }
     
     // get number of rows according to loadColours items
