@@ -12,8 +12,8 @@ import UIKit
 let COLOURS_KEY = "colours"
 
 class ColourDataManager {
-    private var colours:[Colour]
-    var favColours:[Colour]
+    private var colours:[Colour] = []
+    var favColours:[Colour] = []
     
     // ?
     static let sharedManager:ColourDataManager = ColourDataManager()
@@ -40,13 +40,14 @@ class ColourDataManager {
     }
     
     func loadFavColours() {
-        if let coloursObject:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(COLOURS_KEY) {
-            favColours = coloursObject as! [Colour]
-        }
+//        if let coloursObject:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(COLOURS_KEY) {
+//            favColours = coloursObject as! [Colour]
+//        }
     }
     
     private func saveFavColours() {
-        NSUserDefaults.standardUserDefaults().setObject(favColours, forKey: COLOURS_KEY)
+        println("Number of fav colours is \(favColours.count)")
+//        NSUserDefaults.standardUserDefaults().setObject(favColours, forKey: COLOURS_KEY)
     }
     
     // Collect all instances of `Colour`
@@ -65,7 +66,13 @@ class ColourDataManager {
     
     func removeFavouriteColour(colour:Colour) {
         // Find a colour instance in favColours that is the exact same isntance as the color passed in
-        // Remove it from array
+        for (index, favColour) in enumerate(favColours) {
+            if colour === favColour {
+                favColours.removeAtIndex(index)
+                break
+            }
+        }
+        
         saveFavColours()
     }
     

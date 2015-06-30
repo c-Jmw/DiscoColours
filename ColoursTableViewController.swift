@@ -41,6 +41,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     // get number of rows according to loadColours items
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colours.count
+
     }
     
     // Get screen height of device to determine table row height for 7 cells to fill screen
@@ -74,18 +75,17 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let colour = colours[indexPath.row]
         
         // Toggle between checked/unchecked state
         // TODO If checked, record favourited colour
         switch (cell!.accessoryType) {
         case .Checkmark:
             cell?.accessoryType = UITableViewCellAccessoryType.None
-            // Add colour
-            //ColourDataManager.addFavouriteColour(saveFavColours())
+            ColourDataManager.sharedManager.removeFavouriteColour(colour)
         default:
             cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-            // Remove colour
-            
+            ColourDataManager.sharedManager.addFavouriteColour(colour)
         }
         
     }
@@ -106,6 +106,6 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     }
     
     @IBAction func redoButton(sender: AnyObject) {
-        self.undoManagerList!.redo()
+        self.undoManagerList?.redo()
     }
 }
