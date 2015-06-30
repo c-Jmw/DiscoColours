@@ -14,8 +14,8 @@
 		C033BD2B1B205F1500F0BF53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C033BD2A1B205F1500F0BF53 /* Images.xcassets */; };
 		C033BD2E1B205F1500F0BF53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C033BD2C1B205F1500F0BF53 /* LaunchScreen.xib */; };
 		C033BD3A1B205F1500F0BF53 /* DiscoColoursV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */; };
-		C033BD451B20686E00F0BF53 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD441B20686E00F0BF53 /* TableViewController.swift */; };
 		C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */; };
+		C03BCB001B3C0EBB00AFA592 /* ColoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,8 @@
 		C033BD331B205F1500F0BF53 /* DiscoColoursV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoColoursV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C033BD381B205F1500F0BF53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoColoursV2Tests.swift; sourceTree = "<group>"; };
-		C033BD441B20686E00F0BF53 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourDataManager.swift; sourceTree = "<group>"; };
+		C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursTableViewController.swift; path = ../../../../../../Users/caseymacrae/Documents/GAprojects/Practice/DiscoColoursV2/ColoursTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		C033BD431B20684A00F0BF53 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C033BD441B20686E00F0BF53 /* TableViewController.swift */,
+				C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -248,8 +248,8 @@
 				C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */,
 				C033BD261B205F1500F0BF53 /* ViewController.swift in Sources */,
 				3102C98A1B3956E50042A034 /* Colour.swift in Sources */,
-				C033BD451B20686E00F0BF53 /* TableViewController.swift in Sources */,
 				C033BD241B205F1500F0BF53 /* AppDelegate.swift in Sources */,
+				C03BCB001B3C0EBB00AFA592 /* ColoursTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

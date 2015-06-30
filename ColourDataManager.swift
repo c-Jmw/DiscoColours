@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+let COLOURS_KEY = "colours"
+
 class ColourDataManager {
     private var colours:[Colour]
     var favColours:[Colour]
@@ -19,11 +21,13 @@ class ColourDataManager {
     // initialise colours array
     init() {
         colours = []
-        favColours = [] // TODO: Load from NSUserDefaults
+        favColours = []
+        
+        loadFavColours()
     }
     
     // set data according to `Colours` struct
-    func loadColours() {        
+    func loadColours() {
         colours = [
             Colour(),
             Colour(),
@@ -35,6 +39,16 @@ class ColourDataManager {
         ]
     }
     
+    func loadFavColours() {
+        if let coloursObject:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(COLOURS_KEY) {
+            favColours = coloursObject as! [Colour]
+        }
+    }
+    
+    private func saveFavColours() {
+        NSUserDefaults.standardUserDefaults().setObject(favColours, forKey: COLOURS_KEY)
+    }
+    
     // Collect all instances of `Colour`
     func findAll() -> [Colour] {
         loadColours()
@@ -44,20 +58,41 @@ class ColourDataManager {
     func addFavouriteColour(selectedColour:Colour) {
         // Add this to favColours
         favColours.append(selectedColour)
+        saveFavColours()
         
         // Save to NSUserDefaults
     }
     
     func removeFavouriteColour(colour:Colour) {
-        // Find a colour instance in favColours that is the exact ame isntance as the color passed in
+        // Find a colour instance in favColours that is the exact same isntance as the color passed in
         // Remove it from array
-        // Save
+        saveFavColours()
     }
     
-    private func saveFavColours() {
-        // Save favColours to NSUserDefaults
-    }
-
+//    private func getArchivedColors() -> [NSData] {
+//        var coloursData:[NSData] = []
+//        
+//        for colour in favColours {
+//            coloursData.append(NSKeyedArchiver.archivedDataWithRootObject(colour.cellBackgroundColour))
+//        }
+//        
+//        return coloursData
+//    }
+//    
+//    private func getUnArchiveColours() -> [Colour] {
+//        var unArchivedColours:[Colour] = []
+//        
+//        if let coloursDataObject:AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(COLOURS_KEY) {
+//            if let coloursData = coloursDataObject as? [NSData] {
+//                for colourData in coloursData {
+//                    let colourValue:UIColor = NSKeyedUnarchiver.unarchiveObjectWithData(colourData) as! UIColor
+//                    unArchivedColours.append(Colour(cellBackgroundColour: colourValue))
+//                }
+//                
+//            }
+//        }
+//        return unArchivedColours
+//    }
 }
 
 

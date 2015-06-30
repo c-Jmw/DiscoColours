@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class TableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class ColoursTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var colours:[Colour] = []
     private var undoManagerList:NSUndoManager?
@@ -43,6 +43,12 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         return colours.count
     }
     
+    // Get screen height of device to determine table row height for 7 cells to fill screen
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var screenSize = UIScreen.mainScreen().bounds
+        var screenHeight = screenSize.size.height / 8.35
+        return screenHeight
+    }
     
     // create table cell and populate with data
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -53,7 +59,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // ?
         var tableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "")
         tableViewCell.selectionStyle = .None
-      
+        
         // get data from `loadColours` function
         tableViewCell.textLabel?.text = colour.title
         tableViewCell.textLabel?.textColor = colour.cellTextColour
@@ -65,25 +71,25 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // send out fully populated table cell
         return tableViewCell
     }
-  
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let cell = tableView.cellForRowAtIndexPath(indexPath)
     
-    // Toggle between checked/unchecked state
-    // TODO If checked, record favourited colour
-    switch (cell!.accessoryType) {
-    case .Checkmark:
-     cell?.accessoryType = UITableViewCellAccessoryType.None
-    default:
-     cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        
+        // Toggle between checked/unchecked state
+        // TODO If checked, record favourited colour
+        switch (cell!.accessoryType) {
+        case .Checkmark:
+            cell?.accessoryType = UITableViewCellAccessoryType.None
+            // Add colour
+            //ColourDataManager.addFavouriteColour(saveFavColours())
+        default:
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            // Remove colour
+            
+        }
+        
     }
-    //if (cell!.accessoryType = .Checkmark) {
-    NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:color]
-    [[NSUserDefaults standardUserDefaults] setObject:colorData forKey:@"\(cell.backgroundColour)"]
-    //}
     
-  }
-
     @IBAction func onRefreshTapped(sender: AnyObject) {
         
         if let oldColoursList = undoManagerList {
@@ -99,4 +105,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         self.undoManagerList!.undo()
     }
     
+    @IBAction func redoButton(sender: AnyObject) {
+        self.undoManagerList!.redo()
+    }
 }

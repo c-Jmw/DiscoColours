@@ -1,59 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3N6-Ou-7Xf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MBU-rN-TMF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="OjV-lf-ALl">
+        <!--Colour Randomiser-->
+        <scene sceneID="yHS-9c-sag">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3N6-Ou-7Xf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rhD-U5-YB5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="tph-hd-B51" kind="relationship" relationship="rootViewController" id="b0S-bR-VXT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Vc-CH-j91" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="309" y="-490"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="DFi-5e-fQQ">
-            <objects>
-                <tableViewController id="tph-hd-B51" customClass="TableViewController" customModule="DiscoColoursV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="9su-PH-l3I">
+                <tableViewController title="Colour Randomiser" id="AzB-bH-sz4" customClass="ColoursTableViewController" customModule="DiscoColoursV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dmB-4G-vCi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
-                            <outlet property="dataSource" destination="tph-hd-B51" id="mVo-l6-UcN"/>
-                            <outlet property="delegate" destination="tph-hd-B51" id="0cd-Xn-toK"/>
+                            <outlet property="dataSource" destination="AzB-bH-sz4" id="lg3-QW-5Mb"/>
+                            <outlet property="delegate" destination="AzB-bH-sz4" id="5qt-zi-Ggn"/>
                         </connections>
                     </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="JFh-VV-et3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="undo" id="HQJ-JI-Koc">
+                    <toolbarItems>
+                        <barButtonItem systemItem="undo" id="SA4-OA-KTS">
                             <connections>
-                                <action selector="undoButton:" destination="tph-hd-B51" id="fXO-7q-zcl"/>
+                                <action selector="undoButton:" destination="AzB-bH-sz4" id="Hwt-fz-kRm"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gDn-2h-gVn">
+                        <barButtonItem systemItem="refresh" id="1fh-NP-MSa">
                             <connections>
-                                <action selector="onRefreshTapped:" destination="tph-hd-B51" id="uJ2-ui-f7T"/>
+                                <action selector="onRefreshTapped:" destination="AzB-bH-sz4" id="cgD-XR-B0D"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="redo" id="hLn-js-PeR">
+                            <connections>
+                                <action selector="redoButton:" destination="AzB-bH-sz4" id="A3F-Wh-HcH"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Colour Randomiser" id="byu-bT-rD7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="sd8-t6-inY">
+                            <connections>
+                                <segue destination="h7x-XF-NfM" kind="show" id="4ad-vH-Vb2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ELR-IO-Ldl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8u-uW-wlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="334"/>
+            <point key="canvasLocation" x="2687" y="-490"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zOJ-RJ-Dbc">
+            <objects>
+                <viewController id="h7x-XF-NfM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dxp-xX-HEU"/>
+                        <viewControllerLayoutGuide type="bottom" id="RsT-IT-obY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iUE-Ai-rTY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="action" id="bDj-nF-b6q"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Tw-iq-Cuz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3382" y="-490"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WrS-i5-HU9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="MBU-rN-TMF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EuV-WS-65E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" id="HhD-bT-ghT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="AzB-bH-sz4" kind="relationship" relationship="rootViewController" id="A3S-sb-Wdw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Na-zv-6AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="-490"/>
         </scene>
     </scenes>
 </document>
