@@ -16,6 +16,7 @@
 		C033BD3A1B205F1500F0BF53 /* DiscoColoursV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */; };
 		C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */; };
 		C03BCB001B3C0EBB00AFA592 /* ColoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */; };
+		C0B980671B45229100A9D572 /* FavouriteColoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B980661B45229100A9D572 /* FavouriteColoursTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		C033BD391B205F1500F0BF53 /* DiscoColoursV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoColoursV2Tests.swift; sourceTree = "<group>"; };
 		C033BD4C1B2085E400F0BF53 /* ColourDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourDataManager.swift; sourceTree = "<group>"; };
 		C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColoursTableViewController.swift; path = ../../../../../../Users/caseymacrae/Documents/GAprojects/Practice/DiscoColoursV2/ColoursTableViewController.swift; sourceTree = "<group>"; };
+		C0B980661B45229100A9D572 /* FavouriteColoursTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteColoursTableViewController.swift; path = ../../../../../../Users/caseymacrae/Documents/GAprojects/Practice/DiscoColoursV2/FavouriteColoursTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C03BCAFF1B3C0EBB00AFA592 /* ColoursTableViewController.swift */,
+				C0B980661B45229100A9D572 /* FavouriteColoursTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C033BD4D1B2085E400F0BF53 /* ColourDataManager.swift in Sources */,
+				C0B980671B45229100A9D572 /* FavouriteColoursTableViewController.swift in Sources */,
 				C033BD261B205F1500F0BF53 /* ViewController.swift in Sources */,
 				3102C98A1B3956E50042A034 /* Colour.swift in Sources */,
 				C033BD241B205F1500F0BF53 /* AppDelegate.swift in Sources */,

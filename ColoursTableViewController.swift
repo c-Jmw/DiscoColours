@@ -13,6 +13,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     
     private var colours:[Colour] = []
     private var undoManagerList:NSUndoManager?
+    private var redoMangerList:NSUndoManager?
     private var userCellSelection:UITableViewRowAction?
     
     
@@ -21,6 +22,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
         
         refreshColours()
         undoManagerList = NSUndoManager()
+        redoMangerList = NSUndoManager()
         userCellSelection = UITableViewRowAction()
     }
     
@@ -33,9 +35,9 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
         self.tableView.reloadData()
     }
     
-    // table cell swipe action
-    override func tableView(tableView:UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
-        
+    func redoRewoundColours(coloursof:[Colour]) {
+        colours = coloursof
+        self.tableView.reloadData()
     }
     
     // get number of rows according to loadColours items
@@ -47,7 +49,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     // Get screen height of device to determine table row height for 7 cells to fill screen
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var screenSize = UIScreen.mainScreen().bounds
-        var screenHeight = screenSize.size.height / 8.35
+        var screenHeight = screenSize.size.height / 8.32
         return screenHeight
     }
     
@@ -102,10 +104,14 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     }
     
     @IBAction func undoButton(sender: AnyObject) {
+        
+        if let undoneColoursList = redoMangerList {
+            undoneColoursList.registerUndoWithTarget(self, selector:Selector("redoRewoundColours:"), object: colours)
+        }
         self.undoManagerList!.undo()
     }
     
     @IBAction func redoButton(sender: AnyObject) {
-        self.undoManagerList?.redo()
+        self.redoMangerList!.undo()
     }
 }
