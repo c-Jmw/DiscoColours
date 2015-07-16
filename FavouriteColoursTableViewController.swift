@@ -42,10 +42,12 @@ class FavouriteColoursTableViewController: UITableViewController, UITableViewDat
     
     // table cell swipe action
     override func tableView(tableView:UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
-//        var deleteColour: () = ColourDataManager.sharedManager.removeFavouriteColour(favColours[indexPath.row])
-//        self.tableView.reloadData()
         
-        // use inbuilt methods to remove cell data and cell from view
+        // remove cell data
+        var deleteColour: () = ColourDataManager.sharedManager.removeFavouriteColour(favColours[indexPath.row])
+        self.tableView.reloadData()
+        
+        // use inbuilt methods to animte and remove cell from view
         if editingStyle == UITableViewCellEditingStyle.Delete {
             favColours.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)

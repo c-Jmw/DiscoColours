@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MBU-rN-TMF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MBU-rN-TMF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -24,19 +24,22 @@
                                 <action selector="undoButton:" destination="AzB-bH-sz4" id="Hwt-fz-kRm"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sMX-Jc-eeA"/>
                         <barButtonItem systemItem="refresh" id="1fh-NP-MSa">
                             <connections>
                                 <action selector="onRefreshTapped:" destination="AzB-bH-sz4" id="cgD-XR-B0D"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dW9-3W-A56"/>
                         <barButtonItem systemItem="redo" id="hLn-js-PeR">
+                            <inset key="imageInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="redoButton:" destination="AzB-bH-sz4" id="A3F-Wh-HcH"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Colour Randomiser" id="byu-bT-rD7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="sd8-t6-inY">
+                        <barButtonItem key="rightBarButtonItem" title="Faves" id="sd8-t6-inY">
                             <connections>
                                 <segue destination="VA3-by-EW1" kind="show" id="7Av-CY-hmw"/>
                             </connections>
