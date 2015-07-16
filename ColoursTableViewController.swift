@@ -49,7 +49,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
     // Get screen height of device to determine table row height for 7 cells to fill screen
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var screenSize = UIScreen.mainScreen().bounds
-        var screenHeight = screenSize.size.height / 8.32
+        var screenHeight = screenSize.size.height / 8.65
         return screenHeight
     }
     
@@ -64,7 +64,7 @@ class ColoursTableViewController: UITableViewController, UITableViewDataSource, 
         tableViewCell.selectionStyle = .None
         
         // get data from `loadColours` function
-        tableViewCell.textLabel?.text = colour.title
+        tableViewCell.textLabel?.text = colour.hexValue
         tableViewCell.textLabel?.textColor = colour.cellTextColour
         tableViewCell.detailTextLabel?.text = colour.colourValue
         tableViewCell.detailTextLabel?.textColor = colour.cellTextColour

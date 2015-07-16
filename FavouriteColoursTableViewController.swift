@@ -31,7 +31,7 @@ class FavouriteColoursTableViewController: UITableViewController, UITableViewDat
         tableViewCell.selectionStyle = .None
         
         // get data from `loadColours` function
-        tableViewCell.textLabel?.text = favColour.title
+        tableViewCell.textLabel?.text = favColour.hexValue
         tableViewCell.textLabel?.textColor = favColour.cellTextColour
         tableViewCell.detailTextLabel?.text = favColour.colourValue
         tableViewCell.detailTextLabel?.textColor = favColour.cellTextColour
@@ -56,6 +56,11 @@ class FavouriteColoursTableViewController: UITableViewController, UITableViewDat
     
     
     @IBAction func shareToFriend(sender: AnyObject) {
+        // grab favourite colours as image
+//        UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 150), false, 0)
+//        self.view.drawViewHierarchyInRect(CGRectMake(-50, -50, view.bounds.size.width, view.bounds.size.height), afterScreenUpdates: true)
+//        var coloursImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
         
     }
     

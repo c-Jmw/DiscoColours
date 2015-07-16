@@ -40,6 +40,25 @@ class Colour:NSCoding {
         }
     }
     
+    // get HEX colour value
+    var hexValue:String {
+        get {
+            // TODO - put this into a function somehow
+            var r:CGFloat = 0
+            var g:CGFloat = 0
+            var b:CGFloat = 0
+            var a:CGFloat = 0
+            cellBackgroundColour.getRed(&r, green: &g, blue: &b, alpha: &a)
+            var redInt = ceil(r*255)
+            var greenInt = ceil(g*255)
+            var blueInt = ceil(b*255)
+            return "#" + String(format:"%02x", Int(redInt)) + String(format:"%02x", Int(greenInt)) + String(format:"%02x", Int(blueInt))
+        }
+    }
+
+
+    
+    // get rgb colour value
     var colourValue:String {
         get {
             var r:CGFloat = 0
@@ -48,8 +67,8 @@ class Colour:NSCoding {
             var a:CGFloat = 0
             cellBackgroundColour.getRed(&r, green: &g, blue: &b, alpha: &a)
             var redInt = ceil(r*255)
-            let greenInt = ceil(g*255)
-            let blueInt = ceil(b*255)
+            var greenInt = ceil(g*255)
+            var blueInt = ceil(b*255)
             return "rgb(\(Int(redInt)), \(Int(greenInt)), \(Int(blueInt)))"
         }
     }
