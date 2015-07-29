@@ -67,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Favourites" id="T0F-jU-X42">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="d12-1M-1xn">
                             <connections>
-                                <action selector="shareToFriend:" destination="VA3-by-EW1" id="X8W-pb-bac"/>
+                                <action selector="shareFavouriteColours:" destination="VA3-by-EW1" id="GU9-tM-OA0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

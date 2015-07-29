@@ -10,6 +10,8 @@
 	<string>DiscoColoursV2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
+		<string>https://github.com/c-Jmw/DiscoColours.git</string>
 		<key>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</key>
 		<string>github.com:ryan-blunden/DiscoColours.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>DiscoColoursV2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>7A1C828E9849B2A57221E95EDDF83C29D9606110</key>
+		<string>../../..</string>
 		<key>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>AC779F7CFAFB9FE9305A8B8F8C0DB7D10F51D60D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A1C828E9849B2A57221E95EDDF83C29D9606110</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

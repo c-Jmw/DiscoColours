@@ -54,14 +54,11 @@ class FavouriteColoursTableViewController: UITableViewController, UITableViewDat
         }
     }
     
-    
-    @IBAction func shareToFriend(sender: AnyObject) {
-        // grab favourite colours as image
-//        UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 150), false, 0)
-//        self.view.drawViewHierarchyInRect(CGRectMake(-50, -50, view.bounds.size.width, view.bounds.size.height), afterScreenUpdates: true)
-//        var coloursImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-        
+    @IBAction func shareFavouriteColours(sender: AnyObject) {
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.size.width, view.bounds.size.height), false, 0)
+        let cropCapture = self.view.drawViewHierarchyInRect(CGRectMake(0,0, view.bounds.size.width, view.bounds.size.height), afterScreenUpdates: true)
+        let finalImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let setScreen = UIActivityViewController(activityItems: [finalImage], applicationActivities: nil)
+        self.presentViewController(setScreen, animated: true, completion: nil)
     }
-    
 }
